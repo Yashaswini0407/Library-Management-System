@@ -1,7 +1,15 @@
 package pattern;
 
-public interface Observer {
+public class BookObserver implements Observer {
 
-    void update(String message);
+    private String patronName;
 
+    public BookObserver(String patronName) {
+        this.patronName = patronName;
+    }
+
+    @Override
+    public void update(String message) {
+        System.out.println("Notification for " + patronName + ": " + message);
+    }
 }
